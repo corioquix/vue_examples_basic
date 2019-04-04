@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>bind:class Vue</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+
+
+    <div id="app" class="container" :class="['mt-5', 'p-2']">
+
+        <h3>{{texto}}</h3>
+        <h3>{{revert}}</h3>
+
+        <input type="text" v-model="texto" />
+        <br><hr>
+        <button type="button" class="btn-success" @click="count++">+</button>
+        <button type="button" class="btn-danger" @click="count--">-</button>
+        <div class="progress">
+            <div class="progress-bar" :class="colorBar" role="progressbar" :style="{'width': count+'%'}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">{{count}}</div>
+        </div>
+
+
+    </div>
+    
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./computed.js"></script>
+</body>
+</html>

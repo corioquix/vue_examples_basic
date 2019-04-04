@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Frutas Vue</title>
+</head>
+<body>
+    <div id="main">
+        <ul>
+            <li v-for="item in frutas">
+                <input type="number" v-model.number="item.count" />
+                {{item.name}} 
+                <span v-if="(item.count <= 0)"> - Sin stock</span>
+                <button type="button" @click="addCantidad(item)">+</button>
+            </li>
+        </ul>
+        <h1>Total: {{sumFrutas}}</h1>
+        <input type="text" v-model="name" @keypress.enter="addFruta()" >
+        <button type="button" @click="addFruta()">Agregar</button>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="./frutas.js"></script>
+</body>
+</html>
